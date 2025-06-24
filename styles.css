@@ -3,28 +3,80 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #fff4e6; /* very light creamy peach */
     color: #333;
+}
+
+/* Section separator line */
+.section-separator {
+  width: 80%;
+  max-width: 800px;
+  margin: 3rem auto;
+  border: none;
+  border-top: 2px dashed #e55d00;
+  opacity: 1;
 }
 
 /* Header Section */
 header {
-    background: url('doetinchem.jpg') center/cover no-repeat;
-    text-align: center;
-    padding: 100px 20px;
     position: relative;
+    height: 80vh;
+    overflow: hidden;
 }
 
-header h1 {
-    font-size: 3rem;
+.banner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mask Overlay */
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.mask-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* Title inside the mask */
+.mask h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
     color: white;
-    background: rgba(255, 0, 0, 0.7); /* Tulpenkleur */
-    padding: 10px;
-    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
     border-radius: 10px;
+    z-index: 2;
+    max-width: 90%;
+    text-align: center;
 }
 
 /* Character Section */
+.character-section{
+    padding: 40px 20px;
+    background-color: gray;
+}
+
 .character {
     padding: 20px;
     margin: 20px auto;
@@ -42,11 +94,33 @@ header h1 {
 .game-section {
     text-align: center;
     padding: 20px;
+    background-color: rgb(29, 29, 29);
+    color: white;
 }
 
 .game-section img {
     max-width: 100%;
     border-radius: 10px;
+}
+
+.play-button {
+  display: inline-block;
+  background-color: #e63946; /* nice red, fits tulip style */
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.play-button:hover,
+.play-button:focus {
+  background-color: #a5272a; /* darker red on hover/focus */
+  outline: none;
 }
 
 /* Merchandise Section */
@@ -66,45 +140,57 @@ header h1 {
     margin: auto;
 }
 
-.carousel {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+.carousel-inner {
+    align-items: center;
 }
-
-.carousel::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
-}
-
-.merch-item {
-    width: 200px; /* Adjust size */
-    height: auto;
+.carousel img {
     border-radius: 10px;
-    flex-shrink: 0;
 }
 
-/* Scroll buttons */
-.scroll-left, .scroll-right {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 24px;
-    cursor: pointer;
-    position: absolute;
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid #ff7f00;
+    border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
+    opacity: 1 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.scroll-left { left: 0; }
-.scroll-right { right: 0; }
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #ff7f00;
+    color: white;
+    border-color: #ff7f00;
+}
 
-.scroll-left:hover, .scroll-right:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+/* Remove Bootstrap's default background arrow */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none;
+}
+
+/* Custom arrow style */
+.custom-arrow {
+    font-size: 2rem;
+    color: #ff7f00;
+    font-weight: bold;
+    -webkit-user-select: none;
+    user-select:none;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.carousel-control-prev:hover .custom-arrow,
+.carousel-control-next:hover .custom-arrow {
+    color: white;
 }
 
 
