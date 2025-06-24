@@ -16,17 +16,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="banner">
-            <img src="images/doetinchem.jpg" alt="Doetinchem" class="banner-image">
-                <div class="mask">
-                    <img src="images/mask.jpg" alt="Watermask" class="mask-image">
-                    <h1>Draak van Doetinchem</h1>
-                </div>
+  <header>
+    <!-- Navbar INSIDE header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-absolute w-100" style="z-index: 10;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Draak van Doetinchem</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+          <span class="visually-hidden">Navbar Toggle</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#characters">Karakters</a></li>
+            <li class="nav-item"><a class="nav-link" href="#game">Spel</a></li>
+            <li class="nav-item"><a class="nav-link" href="#merch">Merchandise</a></li>
+          </ul>
         </div>
-    </header>
+      </div>
+    </nav>
+
+    <div class="banner">
+      <img src="images/doetinchem.jpg" alt="Doetinchem" class="banner-image">
+      <div class="mask">
+        <img src="images/mask.jpg" alt="Watermask" class="mask-image">
+        <h1>Draak van Doetinchem</h1>
+      </div>
+    </div>
+  </header>
+
     <hr class="section-separator">
-    <section class="character-section">
+    <section  id="characters" class="character-section">
         <div class="character" style="background-color: #7b001c;">
             <h2>Kirjan Drakenhoofd</h2>
             <p>"Hallo, mijn naam is Kirjan. Ik ben de legendarische Draak van Doetinchem. Ik draag graag mijn badjas en een tulp op mijn rug."</p>
@@ -41,7 +60,7 @@
         </div>
     </section>
 <hr class="section-separator">
-    <section class="game-section">
+    <section id="game" class="game-section">
         <img src="images/screenshot2.png" alt="Draak van Doetinchem Screenshot">
         <div>
             <p>Ontdek de legende van de draak en red de stad in dit spannende spel.</p>
@@ -49,7 +68,7 @@
         </div>
     </section>
 <hr class="section-separator">
-    <section class="merchandise container my-5">
+    <section id="merch" class="merchandise container my-5">
   <h2 class="text-center mb-4">Merchandise</h2>
   <div id="merchCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">

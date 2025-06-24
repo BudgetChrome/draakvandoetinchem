@@ -7,6 +7,10 @@ body {
     color: #333;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Section separator line */
 .section-separator {
   width: 80%;
