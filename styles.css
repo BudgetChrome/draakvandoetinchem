@@ -7,6 +7,11 @@ body {
     color: #333;
 }
 
+#image {
+    max-width:fit-content;
+    max-height:fit-content;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -175,6 +180,7 @@ header {
 
 .game-section img {
     max-width: 100%;
+    max-height: 100%;
     border-radius: 10px;
 }
 
