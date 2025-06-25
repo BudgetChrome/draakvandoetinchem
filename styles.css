@@ -22,22 +22,76 @@ html {
 }
 
 /* Header Section */
+.header-split {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Left side: image with mask */
+.banner-side {
+  position: relative;
+  width: 60%;
+  height: 100%;
+}
+
+.banner-side .banner-image,
+.banner-side .mask-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.banner-side .mask-image{
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.banner-side .mask h1 {
+  position: absolute;
+  bottom: 10%;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 3;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Right side: text */
+.description-side {
+  width: 40%;
+  padding: 3rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description-side h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.description-side p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
 header {
     position: relative;
     height: 80vh;
     overflow: hidden;
-}
-
-.banner {
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 /* Mask Overlay */
@@ -73,6 +127,23 @@ header {
     z-index: 2;
     max-width: 90%;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+  .header-split {
+    flex-direction: column;
+  }
+
+  .banner-side,
+  .description-side {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .description-side {
+    padding: 1.5rem;
+    height: auto;
+  }
 }
 
 /* Character Section */
